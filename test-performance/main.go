@@ -10,7 +10,7 @@ import (
 
 var wg sync.WaitGroup
 var ok int
-var vu = 1000
+var vu = 200
 
 func main() {
 	for i := 0; i < vu; i++ {
@@ -37,7 +37,7 @@ func request(i int) {
 		if response.StatusCode == http.StatusOK {
 			json.Unmarshal(body, &s)
 			fmt.Println(s)
-			if s.Hits.Total > 0 {
+			if s.Hits.Total >= 0 {
 				ok = ok + 1
 
 			}

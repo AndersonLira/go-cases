@@ -24,7 +24,7 @@ func main() {
 func request(i int) {
 	defer wg.Done()
 	fmt.Printf("Request: %d\n", i)
-	URL := fmt.Sprintf("http://escoladigitaldes.vanzolini-gte.org.br/api/1/search?q=%d", i)
+	URL := fmt.Sprintf("http://escoladigitaldes.vanzolini-gte.org.br/api/6/search?q=%d", i)
 	response, err := http.Get(URL)
 	if err != nil {
 		fmt.Printf("Error %v\n", err)
